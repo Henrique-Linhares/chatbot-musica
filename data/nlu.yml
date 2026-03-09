@@ -1,0 +1,84 @@
+version: "3.1"
+
+nlu:
+- intent: cumprimentar
+  examples: |
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+    - boa noite
+    - e ai?
+    - tudo bem?
+
+- intent: agradecer
+  examples: |
+    - obrigado
+    - muito obrigado
+    - valeu
+    - brigado
+    - obrigada
+    - valeu demais
+    - grato
+    - agradeço
+
+- intent: negar
+  examples: |
+    - não
+    - n
+    - nunca
+    - não acho
+    - não gosto
+    - não quero
+    - não mesmo
+    - prefiro outro gênero
+
+- intent: informar_genero
+  examples: |
+    - gosto de [rock](genero)
+    - quero ouvir uma música de [samba](genero)
+    - prefiro [sertanejo](genero)
+    - me indique uma música [gospel](genero)
+    - me indique uma música [clássica](genero)
+    - me indique uma música [eletrônica](genero)
+    - quero ouvir um [rap](genero)
+    - prefiro [trap](genero)
+    - me indica uma música de [pop](genero)
+    - me sugira um [jazz](genero)
+    - curto [mpb](genero)
+    - toca um [funk](genero)
+
+- intent: afirmar
+  examples: |
+    - sim
+    - claro
+    - com certeza
+    - perfeito
+    - ótimo
+    - excelente
+    - pode ser
+    - quero
+
+- intent: pedir_ajuda
+  examples: |
+    - pode me ajudar?
+    - como funciona?
+    - me ajuda
+    - me ajude
+    - não sei o que fazer
+
+- intent: pedir_recomendacao
+  examples: |
+    - me indique uma música
+    - quero uma recomendação
+    - me recomende uma música
+    - me sugira uma música
+
+- intent: despedir
+  examples: |
+    - tchau
+    - até mais
+    - até logo
+    - até breve
+    - até amanhã
+    - adeus

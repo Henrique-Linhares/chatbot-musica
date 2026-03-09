@@ -1,0 +1,12 @@
+version: "3.1"
+
+rules:
+- rule: Despedir sempre que o usuário der tchau
+  steps:
+  - intent: despedir
+  - action: utter_despedir
+
+- rule: Responder desafio do bot
+  steps:
+  - intent: bot_challenge 
+  - action: utter_iamabot

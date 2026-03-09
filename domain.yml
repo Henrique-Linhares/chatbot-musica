@@ -1,0 +1,47 @@
+version: "3.1"
+
+intents:
+  - cumprimentar
+  - informar_genero
+  - pedir_recomendacao
+  - agradecer
+  - despedir
+  - afirmar
+  - negar
+  - pedir_ajuda
+  - informar_genero_nao_listado
+  - bot_challenge
+
+responses:
+  utter_cumprimentar:
+  - text: "Olá! Sou seu assistente musical. Como posso ajudar?"
+
+  utter_pedir_genero:
+  - text: "Qual gênero musical você gostaria de ouvir?"
+
+  utter_despedir:
+  - text: "Até logo! Curta suas músicas!"
+
+  utter_pedir_ajuda:
+  - text: "Eu posso recomendar playlists e artistas baseados no seu gosto musical."
+
+  utter_negar:
+  - text: "Sem problemas. Vamos tentar outro! Qual gênero você prefere?"
+
+  utter_genero_invalido:
+  - text: "Desculpe, ainda não conheço esse estilo. Pode tentar outro?"
+
+  utter_pedir_recomendacao:
+  - text: "Com certeza! Me diga um gênero (Rock, Pop, Samba...) e eu te indico algo."
+
+  utter_genero_nao_listado:
+  - text: "Poxa, ainda não tenho esse gênero na minha biblioteca."
+
+  utter_agradecer:
+  - text: "De nada! Aproveite o som."
+
+  utter_iamabot:
+  - text: "Eu sou um assistente virtual focado em música!"
+
+actions:
+  - action_pedir_recomendacao
