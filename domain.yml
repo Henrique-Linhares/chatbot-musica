@@ -12,6 +12,17 @@ intents:
   - informar_genero_nao_listado
   - bot_challenge
 
+entities:
+  - genero
+
+slots:
+  genero:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: genero
+
 responses:
   utter_cumprimentar:
   - text: "Olá! Sou seu assistente musical. Como posso ajudar?"
@@ -45,3 +56,7 @@ responses:
 
 actions:
   - action_pedir_recomendacao
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

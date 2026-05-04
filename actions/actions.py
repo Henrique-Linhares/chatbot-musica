@@ -1,4 +1,5 @@
 from typing import Any, Text, Dict, List
+import unicodedata
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -19,9 +20,15 @@ class ActionPedirRecomendacao(Action):
         if musicas:
             dispatcher.utter_message(text=f"Para o gênero {genero.capitalize()}, recomendo: {', '.join(musicas)}")
         else:
-            dispatcher.utter_message(template="utter_genero_nao_listado")
+            dispatcher.utter_message(response="utter_genero_nao_listado")
 
         return []
+
+    @staticmethod
+    def normalizar(texto: Text) -> Text:
+        """Remove acentos e converte para minúsculo."""
+        nfkd = unicodedata.normalize("NFKD", texto)
+        return "".join(c for c in nfkd if not unicodedata.combining(c)).lower()
 
     def obter_musicas(self, genero: Text) -> List[Text]:
         base_musicas = {
@@ -33,7 +40,10 @@ class ActionPedirRecomendacao(Action):
             "trap": ["Sicko Mode", "Mo Bamba", "The Box"],
             "gospel": ["Amazing Grace", "How Great Is Our God", "10,000 Reasons"],
             "classica": ["Sinfonia No. 5", "Moonlight Sonata", "Für Elise"],
-            "eletronica": ["Strobe", "Levels", "One More Time"]
+            "eletronica": ["Strobe", "Levels", "One More Time"],
+            "mpb": ["Construção", "Águas de Março", "Disparada"],
+            "jazz": ["So What", "Take Five", "My Favorite Things"],
+            "funk": ["Vai Malandra", "Que Tiro Foi Esse", "Bum Bum Tam Tam"],
         }
 
-        return base_musicas.get(genero.lower(), [])
+        return base_musicas.get(self.normalizar(genero), [])

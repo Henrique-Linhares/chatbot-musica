@@ -82,3 +82,23 @@ nlu:
     - até breve
     - até amanhã
     - adeus
+
+- intent: bot_challenge
+  examples: |
+    - você é um robô?
+    - você é humano?
+    - é um bot?
+    - estou falando com um robô?
+    - você é real?
+    - é uma máquina?
+
+- intent: informar_genero_nao_listado
+  examples: |
+    - quero ouvir [pagode](genero)
+    - gosto de [reggae](genero)
+    - curto [country](genero)
+    - me indica [blues](genero)
+    - quero [metal](genero)
+    - prefiro [indie](genero)
+    - toca um [forró](genero)
+    - me sugira [axé](genero)
